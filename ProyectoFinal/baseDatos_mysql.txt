@@ -1,0 +1,63 @@
+DROP DATABASE  IF EXISTS bdMatricula;
+CREATE DATABASE bdMatricula;
+USE  bdMatricula;
+-- Crear la tabla de Estudiantes
+DROP TABLE  IF EXISTS Estudiantes;
+CREATE TABLE Estudiantes (
+    id_estudiante INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL,
+    apellido VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL
+);
+-- Crear la tabla de Cursos
+DROP TABLE  IF EXISTS Cursos;
+CREATE TABLE Cursos (
+    id_curso INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_curso VARCHAR(100) NOT NULL,
+    profesor VARCHAR(50) NOT NULL
+);
+-- Crear la tabla de Inscripciones
+DROP TABLE  IF EXISTS Inscripciones;
+CREATE TABLE Inscripciones (
+    id_inscripcion INT AUTO_INCREMENT PRIMARY KEY,
+    id_estudiante INT,
+    id_curso INT,
+    fecha_inscripcion DATE NOT NULL,
+    FOREIGN KEY (id_estudiante) REFERENCES Estudiantes (id_estudiante),
+    FOREIGN KEY (id_curso) REFERENCES Cursos (id_curso)
+);
+
+
+
+INSERT INTO Cursos(nombre_curso, profesor) VALUES('Base de Datos I','Juan Palomino');
+INSERT INTO Cursos(nombre_curso, profesor) VALUES('Algoritmos','Maria Cardenas');
+INSERT INTO Cursos(nombre_curso, profesor) VALUES('Programación Avanzada','Luis Sánchez');
+INSERT INTO Cursos(nombre_curso, profesor) VALUES('Redes de Computadoras','Ana Martínez');
+INSERT INTO Cursos(nombre_curso, profesor) VALUES('Sistemas Operativos','Diego Rodríguez');
+INSERT INTO Cursos(nombre_curso, profesor) VALUES('Inteligencia Artificial','Laura Gómez');
+INSERT INTO Cursos(nombre_curso, profesor) VALUES('Seguridad Informática','Carlos Ríos');
+INSERT INTO Cursos(nombre_curso, profesor) VALUES('Desarrollo Web','Elena Vargas');
+INSERT INTO Cursos(nombre_curso, profesor) VALUES('Matemáticas Discretas','Sergio Pérez');
+INSERT INTO Cursos(nombre_curso, profesor) VALUES('Ingeniería de Software','Marta Torres');
+
+
+INSERT INTO Estudiantes(nombre, apellido, email) VALUES ('Pepe', 'Sevillano', 'pepe@gmail.com');
+INSERT INTO Estudiantes(nombre, apellido, email) VALUES ('Luis', 'Valenzuela', 'luis@gmail.com');
+INSERT INTO Estudiantes(nombre, apellido, email) VALUES ('Ana', 'Gómez', 'ana@gmail.com');
+INSERT INTO Estudiantes(nombre, apellido, email) VALUES ('Carlos', 'López', 'carlos@gmail.com');
+INSERT INTO Estudiantes(nombre, apellido, email) VALUES ('Laura', 'Martínez', 'laura@gmail.com');
+INSERT INTO Estudiantes(nombre, apellido, email) VALUES ('Javier', 'Rodríguez', 'javier@gmail.com');
+INSERT INTO Estudiantes(nombre, apellido, email) VALUES ('María', 'Pérez', 'maria@gmail.com');
+INSERT INTO Estudiantes(nombre, apellido, email) VALUES ('Sofía', 'Ramírez', 'sofia@gmail.com');
+INSERT INTO Estudiantes(nombre, apellido, email) VALUES ('David', 'Fernández', 'david@gmail.com');
+INSERT INTO Estudiantes(nombre, apellido, email) VALUES ('Elena', 'García', 'elena@gmail.com');
+INSERT INTO Estudiantes(nombre, apellido, email) VALUES ('Rosa', 'Fernández', 'rosa@gmail.com');
+INSERT INTO Estudiantes(nombre, apellido, email) VALUES ('Juan', 'González', 'juan@gmail.com');
+INSERT INTO Estudiantes(nombre, apellido, email) VALUES ('Lorena', 'Hernández', 'lorena@gmail.com');
+INSERT INTO Estudiantes(nombre, apellido, email) VALUES ('Pedro', 'Torres', 'pedro@gmail.com');
+INSERT INTO Estudiantes(nombre, apellido, email) VALUES ('Carmen', 'López', 'carmen@gmail.com');
+INSERT INTO Estudiantes(nombre, apellido, email) VALUES ('Miguel', 'Díaz', 'miguel@gmail.com');
+INSERT INTO Estudiantes(nombre, apellido, email) VALUES ('Isabel', 'Martínez', 'isabel@gmail.com');
+INSERT INTO Estudiantes(nombre, apellido, email) VALUES ('Andrés', 'Ramírez', 'andres@gmail.com');
+INSERT INTO Estudiantes(nombre, apellido, email) VALUES ('Lucía', 'Sánchez', 'lucia@gmail.com');
+INSERT INTO Estudiantes(nombre, apellido, email) VALUES ('Mario', 'Fuentes', 'mario@gmail.com');
